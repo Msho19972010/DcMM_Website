@@ -1,0 +1,350 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background-color: #e0f2f7; /* Запасной цвет фона */
+  color: #333;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  /* Красивый градиент */
+  background: linear-gradient(135deg, #e0f2f7 0%, #cce5ef 50%, #b2d8e6 100%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Фиксированный фон */
+}
+
+.container {
+  max-width: 480px; /* Ширина как у телефона */
+  margin: 50px auto; /* Центрирование по вертикали и горизонтали */
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Центрируем содержимое контейнера */
+  animation: fadeIn 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление контейнера */
+}
+
+/* Шапка (информация о враче) */
+header {
+  margin-bottom: 30px;
+  animation: fadeInDown 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление шапки сверху */
+}
+
+header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  background-color: #e0e0e0; /* Светло-серый для иконки-заглушки */
+  animation: zoomIn 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное увеличение аватара */
+}
+
+header h1 {
+  font-size: 1.8em;
+  color: #34495e; /* Темно-синий цвет текста */
+  margin-bottom: 5px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideInDownText 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление заголовка */
+  animation-delay: 0.5s;
+}
+
+header p {
+  font-size: 0.9em;
+  color: #7f8c8d; /* Серый цвет подзаголовка */
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideInUpText 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление подзаголовка */
+  animation-delay: 0.7s;
+}
+
+/* Ссылки */
+.links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.link-button {
+  background-color: #34495e; /* Темно-синий цвет кнопок */
+  color: white;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease-out,
+    box-shadow 0.2s ease-out; /* Плавные переходы */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: block; /* Занимает всю ширину */
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавный слайд слева */
+}
+
+.link-button:nth-child(1) {
+  animation-delay: 0.9s;
+}
+
+.link-button:nth-child(2) {
+  animation-delay: 1.1s;
+}
+
+.link-button:nth-child(3) {
+  animation-delay: 1.3s;
+}
+
+.link-button:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+.link-button:hover {
+  background-color: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* Усиление тени при наведении */
+}
+
+.link-button span {
+  display: block;
+  font-size: 0.8em;
+  color: #bdc3c7; /* Светло-серый цвет под текстом */
+  margin-top: 5px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards 0.2s; /* Плавное появление подписи */
+}
+
+/* Контактная информация */
+.contact-info {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление снизу */
+  animation-delay: 1.7s;
+}
+
+.contact-info h2 {
+  font-size: 1.5em;
+  color: #34495e;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #bdc3c7;
+  padding-bottom: 5px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeftText 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление заголовка */
+  animation-delay: 1.9s;
+}
+
+.contact-info p {
+  font-size: 0.95em;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideInRightText 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление параграфа */
+  animation-delay: 2.1s;
+}
+
+.contact-info strong {
+  color: #34495e;
+  font-weight: 600;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #bdc3c7; /* Светло-серый для футера */
+  border-radius: 8px;
+  color: #546e7a;
+  font-size: 0.85em;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; /* Плавное появление снизу */
+  animation-delay: 2.3s;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDownText {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUpText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeftText {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRightText {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px auto;
+    padding: 20px;
+  }
+}
+
+/* Дополнительные анимации для адаптивности (если нужно) */
+/* Например, можно немного изменить задержки или скорости анимаций */
+@media (max-width: 400px) {
+  .link-button:nth-child(1) {
+    animation-delay: 0.8s;
+  }
+
+  .link-button:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  .link-button:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+
+  .link-button:nth-child(4) {
+    animation-delay: 1.4s;
+  }
+
+  .contact-info {
+    animation-delay: 1.6s;
+  }
+
+  .contact-info h2 {
+    animation-delay: 1.8s;
+  }
+
+  .contact-info p {
+    animation-delay: 2s;
+  }
+
+  footer {
+    animation-delay: 2.2s;
+  }
+}
